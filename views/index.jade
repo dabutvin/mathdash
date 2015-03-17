@@ -1,5 +1,43 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    div.magellan-container(data-magellan-expedition='fixed')
+        div.row
+            dl.sub-nav
+                dd
+                    a(href='/') MathDash
+                dd
+                    a(href='http://google.com') Get the app
+                dd(data-magellan-arrival='home')
+                    a(href='#home') Home
+                dd(data-magellan-arrival='stories')
+                    a(href='#stories') Stories
+                dd(data-magellan-arrival='contact')
+                    a(href='#contact') Contact us
+    div.panel.home-panel
+        div.row
+            div.column
+                p
+                    a(name='home')
+                h2(data-magellan-destination='home') Home panel heading
+                p Craft beer Echo Park semiotics health goth, cred leggings street art viral Pinterest crucifix tattooed. Mumblecore lomo letterpress ethical. Paleo mustache Godard, meditation keffiyeh kale chips whatever Vice umami dreamcatcher Kickstarter wolf retro mumblecore Marfa. Gastropub twee art party dreamcatcher Thundercats. Chambray flexitarian biodiesel stumptown. American Apparel distillery wayfarers keytar beard Portland, crucifix Carles Kickstarter vinyl actually cray letterpress gluten-free Vice. Portland narwhal pour-over yr tofu, photo booth migas McSweeney's authentic pickled 90's put a bird on it Thundercats PBR&B.
+    div.panel.stories-panel
+        div.row
+           div.column
+                p
+                    a(name='stories')
+                h2(data-magellan-destination='stories') Stories panel heading
+                p Portland scenester Austin locavore leggings roof party, cornhole food truck gentrify hashtag bitters Pitchfork. Marfa High Life kale chips listicle, food truck selvage Tumblr bespoke shabby chic hella letterpress you probably haven't heard of them fashion axe hashtag fixie. Neutra chia fanny pack, post-ironic Pinterest health goth Odd Future chillwave Thundercats cliche listicle Wes Anderson food truck.
+    div.panel.contact-panel
+        div.row
+           div.column
+                p
+                    a(name='contact')
+                h2(data-magellan-destination='contact') Contact panel heading
+                p Pinterest fap normcore small batch, 90's Tumblr freegan pork belly. Etsy Helvetica Thundercats, bespoke vegan deep v YOLO craft beer chambray health goth direct trade VHS. Authentic ennui artisan, cliche cronut fashion axe Odd Future cardigan craft beer YOLO gastropub. Sartorial yr flannel, lo-fi irony mustache banjo fixie ennui.
+    div.panel.footer-panel
+        div.row
+            div.column
+                p FOOTER
+                blockquote I do not fear computers. I fear the lack of them. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.
+                    cite Isaac Asimov
