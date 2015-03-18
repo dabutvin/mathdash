@@ -3,7 +3,33 @@ body {
         min-height: 30rem;
 
         &.hero-panel {
-            background-image: url('https://c1.staticflickr.com/3/2489/4027742399_75c92599f6_b.jpg');
+            background-image: url('/images/background.png');
+            background-repeat: repeat-x;
+            -webkit-animation: slide 30s linear infinite;
+            -webkit-animation: slide 30s linear infinite; /* Safari 4+ */
+            -moz-animation:    slide 30s linear infinite; /* Fx 5+ */
+            -o-animation:      slide 30s linear infinite; /* Opera 12+ */
+            animation:         slide 30s linear infinite; /* IE 10+, Fx 29+ */
+
+            @-webkit-keyframes slide {
+                0%    { background-position: 100% 0; }
+                100%  { background-position: 0% 0; }
+            }
+
+            @-moz-keyframes slide {
+                0%    { background-position: 100% 0; }
+                100%  { background-position: 0% 0; }
+            }
+
+            @-o-keyframes slide {
+                0%    { background-position: 100% 0; }
+                100%  { background-position: 0% 0; }
+            }
+
+            @keyframes slide {
+                0%    { background-position: 100% 0; }
+                100%  { background-position: 0% 0; }
+            }
 
             h1 {
                 color: #fff;
