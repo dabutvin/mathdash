@@ -9,7 +9,8 @@ router.get('/', function(req, res) {
         title: 'Mathdash',
         slick: {
             'slidesToShow': 3,
-            'slidesToScroll': 2,
+            // 'slidesToScroll': 2, // this is instead of 'swipeToSlide'
+            'swipeToSlide': true,
             'arrows': false,
             'mobileFirst': true
         },
