@@ -4,31 +4,16 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width')
     title= title
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.min.css')
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/normalize.min.css')
+    link(rel='stylesheet', href='/stylesheets/foundation/foundation.min.css')
+    link(rel='stylesheet', href='/stylesheets/foundation/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/slick.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/vendor/modernizr.js')
+    script(src='/scripts/modernizr.js')
   body
-    //- div.contain-to-grid.sticky
-        //- nav.top-bar(data-topbar, role='navigation')
-        //-     ul.title-area
-        //-         li.name
-        //-             h1
-        //-                 a(href='/') MathDash
-        //-         li.toggle-topbar.menu-icon
-        //-             a(href='#')
-        //-                 span Menu
-        //-     section.top-bar-section
-        //-         ul.right
-        //-             li.active
-        //-                 a(href='http://getapp/') Get the app
-        //-             li
-        //-                 a(href='#contact') Contact
     block content
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation.min.js')
-    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation/foundation.topbar.min.js')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/js/foundation/foundation.magellan.min.js')
-    script
-        $(document).foundation();
+    script(src='/scripts/foundation.min.js')
+    script(src='/scripts/foundation.magellan.js')
+    script(src='/scripts/slick.min.js')
+    script(src='/script.js')
         
