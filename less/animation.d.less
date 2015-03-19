@@ -1,26 +1,26 @@
-.slide(@duration) {
-    -webkit-animation: slide @duration linear infinite; /* Safari 4+ */
-    -moz-animation:    slide @duration linear infinite; /* Fx 5+ */
-    -o-animation:      slide @duration linear infinite; /* Opera 12+ */
-    animation:         slide @duration linear infinite; /* IE 10+, Fx 29+ */
+.slideforever() {
+    -webkit-animation: slide 180s linear infinite; /* Safari 4+ */
+    -moz-animation:    slide 180s linear infinite; /* Fx 5+ */
+    -o-animation:      slide 180s linear infinite; /* Opera 12+ */
+    animation:         slide 180s linear infinite; /* IE 10+, Fx 29+ */
 
     @-webkit-keyframes slide {
-        0%    { background-position: 100% 0; }
+        0%    { background-position: 600% 0; }
         100%  { background-position: 0% 0; }
     }
 
     @-moz-keyframes slide {
-        0%    { background-position: 100% 0; }
+        0%    { background-position: 600% 0; }
         100%  { background-position: 0% 0; }
     }
 
     @-o-keyframes slide {
-        0%    { background-position: 100% 0; }
+        0%    { background-position: 600% 0; }
         100%  { background-position: 0% 0; }
     }
 
     @keyframes slide {
-        0%    { background-position: 100% 0; }
+        0%    { background-position: 600% 0; }
         100%  { background-position: 0% 0; }
     }
 }

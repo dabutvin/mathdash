@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
             'slidesToShow': 3,
             // 'slidesToScroll': 2, // this is instead of 'swipeToSlide'
             'swipeToSlide': true,
-            'arrows': false,
+            'arrows': true,
             'mobileFirst': true
         },
         cache: false
