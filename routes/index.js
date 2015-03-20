@@ -12,7 +12,10 @@ router.get('/', function(req, res) {
             // 'slidesToScroll': 2, // this is instead of 'swipeToSlide'
             'swipeToSlide': true,
             'arrows': true,
-            'mobileFirst': true
+            'mobileFirst': true,
+            'nextArrow': '<button type="button" class="slick-next">></button>',
+            'prevArrow': '',
+            'appendArrows': '.arrow-container'
         },
         cache: false
     });
