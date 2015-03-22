@@ -21,4 +21,21 @@ router.get('/', function(req, res) {
     });
 });
 
+
+router.get('/legal', function(req, res) {
+	res.render(
+		'legal',
+		{
+			title: 'Legal'
+		});
+});
+
+router.get('/privacy', function(req, res) {
+	res.render(
+		'privacy',
+		{
+			title: 'Privacy Policy'
+		});
+});
+
 module.exports = router;
