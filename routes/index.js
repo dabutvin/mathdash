@@ -40,7 +40,8 @@ router.get('/legal', function(req, res) {
 	res.render(
 		'legal',
 		{
-			title: 'Legal'
+			title: 'Legal',
+            cache: false
 		});
 });
 
@@ -48,7 +49,8 @@ router.get('/privacy', function(req, res) {
 	res.render(
 		'privacy',
 		{
-			title: 'Privacy Policy'
+			title: 'Privacy Policy',
+            cache: false
 		});
 });
 

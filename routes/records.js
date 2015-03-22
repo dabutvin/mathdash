@@ -22,7 +22,14 @@ router.get('/', function(req, res) {
 
             tableSvc.queryEntities(globalTable, query, null, function(error, result, response) {
                 if(!error) {
-                    res.json(result.entries);
+                    var data = result.entries.map(function(entry) {
+                        return {
+                            score: entry.score._,
+                            level: entry.level._,
+                            difficulty: entry.difficulty._
+                        };
+                    });
+                    res.json(data);
                 } else {
                     res.status(500).send("Error querying records");
                 }
