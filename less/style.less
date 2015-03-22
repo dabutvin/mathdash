@@ -3,32 +3,34 @@
 body {
     background-color: #000;
 
-    .panel {
-        min-height: 13.5rem;
-        border: none;
-        background-color: #A9A8A8;
-        padding-top: 3rem;
-        margin: 0;
+    &:before {
+        content: "";
+        background-image: url('/images/background.png');
+        background-repeat: repeat-x;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: .5;
+        z-index: -1;
+        .slideforever();
+    }
 
+    .panel {
+        border: none;
+        background-color: transparent;
+        padding-top: 3rem;
+
+        .row {
+            background-color: #2D1E1E;
+            padding: 20px;
+            border-radius: 20px;
+        }
 
         &.hero-panel {
-            height: 24.5rem;
             position: relative;
             background-color: transparent;
-
-            &:before {
-                content: "";
-                background-image: url('/images/background.png');
-                background-repeat: repeat-x;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                opacity: .5;
-                z-index: -1;
-                .slideforever();
-            }
 
 			a {
 				background-color: rgb(255, 153, 0);
@@ -37,7 +39,6 @@ body {
             h1 {
                 color: rgb(255, 153, 0);
 				text-align:center;
-				margin-top: 6.75rem;
                 // background-color: rgba(0, 0, 0, 0.5);
                 // border-radius: 60px;
                 padding: 22px 26px 23px;
@@ -56,8 +57,9 @@ body {
     }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,p,blockquote,cite {
     font-family: Verdana, Geneva, sans-serif !important;
+    color: #fff !important;
 }
 
 .slick-slide {
