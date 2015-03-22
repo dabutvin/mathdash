@@ -8,14 +8,28 @@ router.get('/', function(req, res) {
     {
         title: 'Mathdash',
         slick: {
-            'slidesToShow': 3,
-            // 'slidesToScroll': 2, // this is instead of 'swipeToSlide'
-            'swipeToSlide': true,
-            'arrows': true,
-            'mobileFirst': true,
-            'nextArrow': '<button type="button" class="slick-next">></button>',
-            'prevArrow': '',
-            'appendArrows': '.arrow-container'
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 1
+              }
+            }]
         },
         cache: false
     });

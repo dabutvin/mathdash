@@ -8,66 +8,56 @@ block content
                     a(href='/') MathDash
                 dd
                     a(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Get the app
-                dd(data-magellan-arrival='home')
-                    a(href='#home') Home
                 dd(data-magellan-arrival='screenshots')
                     a(href='#screenshots') Screenshots
+                dd(data-magellan-arrival='home')
+                    a(href='#about') About
+                dd(data-magellan-arrival='highscores')
+                    a(href='#highscores') High scores
                 dd(data-magellan-arrival='stories')
                     a(href='#stories') Stories
-                dd(data-magellan-arrival='contact')
-                    a(href='#contact') Contact us
     div.panel.hero-panel
         h1 Math just became fun again
-        strong
-            a.button.round(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Get the App
-    div.panel.home-panel(data-magellan-destination='home')
-        a(name='home')
+        a.button.round(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Get the App
+    div.panel(data-magellan-destination='screenshots')
+        a(name='screenshots')
+        div.row(data-slick='#{JSON.stringify(slick)}')
+            img(alt='', src='/images/screenshots/1.png')
+            img(alt='', src='/images/screenshots/2.png')
+            img(alt='', src='/images/screenshots/3.png')
+            img(alt='', src='/images/screenshots/4.png')
+            img(alt='', src='/images/screenshots/5.png')
+            img(alt='', src='/images/screenshots/6.png')
+            img(alt='', src='/images/screenshots/7.png')
+            img(alt='', src='/images/screenshots/8.png')
+            img(alt='', src='/images/screenshots/9.png')
+            img(alt='', src='/images/screenshots/10.png')
+            img(alt='', src='/images/screenshots/12.png')
+            img(alt='', src='/images/screenshots/13.png')
+            img(alt='', src='/images/screenshots/14.png')
+            img(alt='', src='/images/screenshots/15.png')
+            img(alt='', src='/images/screenshots/16.png')
+    div.panel(data-magellan-destination='about')
+        a(name='about')
         div.row
             div.column
                 h3 Some kind of tag line
                 h2 Home panel heading
                 p Craft beer Echo Park semiotics health goth, cred leggings street art viral Pinterest crucifix tattooed. Mumblecore lomo letterpress ethical. Paleo mustache Godard, meditation keffiyeh kale chips whatever Vice umami dreamcatcher Kickstarter wolf retro mumblecore Marfa. Gastropub twee art party dreamcatcher Thundercats. Chambray flexitarian biodiesel stumptown. American Apparel distillery wayfarers keytar beard Portland, crucifix Carles Kickstarter vinyl actually cray letterpress gluten-free Vice. Portland narwhal pour-over yr tofu, photo booth migas McSweeney's authentic pickled 90's put a bird on it Thundercats PBR&B.
-    div.panel(data-magellan-destination='screenshots')
-        a(name='screenshots')
+    div.panel.highscore-panel(data-magellan-destination='highscores')
+        a(name='highscores')
         div.row
-            div.column
-                h2 Screenshots
-        div.row
-            div.column.small-11(data-slick='#{JSON.stringify(slick)}')
-                    img(alt='', src='/images/screenshots/1.png')
-                    img(alt='', src='/images/screenshots/2.png')
-                    img(alt='', src='/images/screenshots/3.png')
-                    img(alt='', src='/images/screenshots/4.png')
-                    img(alt='', src='/images/screenshots/5.png')
-                    img(alt='', src='/images/screenshots/6.png')
-                    img(alt='', src='/images/screenshots/7.png')
-                    img(alt='', src='/images/screenshots/8.png')
-                    img(alt='', src='/images/screenshots/9.png')
-                    img(alt='', src='/images/screenshots/10.png')
-                    img(alt='', src='/images/screenshots/12.png')
-                    img(alt='', src='/images/screenshots/13.png')
-                    img(alt='', src='/images/screenshots/14.png')
-                    img(alt='', src='/images/screenshots/15.png')
-                    img(alt='', src='/images/screenshots/16.png')
-            div.column.small-1.arrow-container
-    div.panel.stories-panel(data-magellan-destination='stories')
+           div.column
+                h2 Records!!
+                p Portland scenester Austin locavore leggings roof party, cornhole food truck gentrify hashtag bitters Pitchfork. Marfa High Life kale chips listicle, food truck selvage Tumblr bespoke shabby chic hella letterpress you probably haven't heard of them fashion axe hashtag fixie. Neutra chia fanny pack, post-ironic Pinterest health goth Odd Future chillwave Thundercats cliche listicle Wes Anderson food truck.
+    div.panel(data-magellan-destination='stories')
         a(name='stories')
         div.row
            div.column
-                h2 Stories panel heading
-                p Portland scenester Austin locavore leggings roof party, cornhole food truck gentrify hashtag bitters Pitchfork. Marfa High Life kale chips listicle, food truck selvage Tumblr bespoke shabby chic hella letterpress you probably haven't heard of them fashion axe hashtag fixie. Neutra chia fanny pack, post-ironic Pinterest health goth Odd Future chillwave Thundercats cliche listicle Wes Anderson food truck.
-                blockquote [MathDash] is in tune with many of today's kids.
+                 blockquote [MathDash] is in tune with many of today's kids.
                     cite Helen Denat, Teacher of 10+ years
                 blockquote My 6 year old grandson loves [MathDash] and wants to play all the time.
                     cite Jackie Crist, Teacher of 20+ years
-    div.panel.contact-panel(data-magellan-destination='contact')
-        a(name='contact')
-        div.row
-           div.column
-                h2 Contact panel heading
-                p Pinterest fap normcore small batch, 90's Tumblr freegan pork belly. Etsy Helvetica Thundercats, bespoke vegan deep v YOLO craft beer chambray health goth direct trade VHS.
-                h3 Yada yada yada
-                p Authentic ennui artisan, cliche cronut fashion axe Odd Future cardigan craft beer YOLO gastropub. Sartorial yr flannel, lo-fi irony mustache banjo fixie ennui.
         div.row
             div.columns.medium-6
                 h4 Somthin sumthing
