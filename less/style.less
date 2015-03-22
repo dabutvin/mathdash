@@ -1,4 +1,4 @@
-@import "animation.d.less";
+@import "effects.d.less";
 
 body {
     background-color: #000;
@@ -7,6 +7,8 @@ body {
         content: "";
         background-image: url('/images/background.png');
         background-repeat: repeat-x;
+        background-position: center top;
+        background-attachment: fixed;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -23,7 +25,7 @@ body {
         overflow: hidden;
 
         .row {
-            background-color: #2D1E1E;
+            background-color: @COLOR_ROW_BG;
             padding: 20px;
             border-radius: 20px;
         }
@@ -34,22 +36,12 @@ body {
             text-align:center;
 
 			a {
-				background-color: rgb(255, 153, 0);
+				background-color: @COLOR_BUTTON_BG;
 			}
-
-            h1 {
-                color: rgb(255, 153, 0);
-                padding: 22px 26px 23px;
-                font-size: 3.5rem;
-            }
         }
 
         &.highscore-panel {
             text-align: center;
-
-            h2 {
-                text-align: left;
-            }
 
             table {
                 margin: 20px auto;
@@ -57,40 +49,38 @@ body {
 
                 tr,td, th {
                     background: transparent;
-                    color: #fff;
+                    color: @COLOR_FG;
                     text-align: center;
                 }
             }
         }
 
-        h2 {
-            font-size: 3rem;
+        h1 {
+            font-size: @SIZE_H1;
         }
 
-        &.contact-panel {
-            background-image: url('http://upload.wikimedia.org/wikipedia/commons/f/fc/Math_class_in_Da_Ji_Junior_High_School_2006-12-1.jpg');
+        h2 {
+            font-size: @SIZE_H2;
+        }
+
+        h3 {
+            font-size: @SIZE_H3;
         }
     }
 }
 
 h1,h2,h3,h4,h5,h6,p,blockquote,cite {
     font-family: Verdana, Geneva, sans-serif !important;
-    color: #fff !important;
+    color: @COLOR_FG !important;
 }
 
 .slick-slide {
     margin-left: 30px;
 
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-    -webkit-transition: all .7s ease-in-out;
-    moz-transition: all .7s ease-in-out;
-    transition: all .7s ease-in-out;
+    .blurfilter();
+    .transition(.7s);
 
     &.slick-center {
-        -webkit-filter: none;
-        filter: none;
+        .nofilter();
     }
 }

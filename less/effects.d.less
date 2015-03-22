@@ -1,3 +1,11 @@
+@COLOR_ROW_BG: #2D1E1E;
+@COLOR_BUTTON_BG: rgb(255, 153, 0);
+@COLOR_FG: #fff;
+
+@SIZE_H1: 3.5rem;
+@SIZE_H2: 3rem;
+@SIZE_H3: 2rem;
+
 .slideforever() {
     -webkit-animation: slide 180s linear infinite; /* Safari 4+ */
     -moz-animation:    slide 180s linear infinite; /* Fx 5+ */
@@ -23,4 +31,21 @@
         0%    { background-position: 600% 0; }
         100%  { background-position: 0% 0; }
     }
+}
+
+
+.nofilter(){
+    -webkit-filter: none;
+    filter: none;
+}
+
+.blurfilter() {
+    -webkit-filter: blur(3px) grayscale(1);
+    filter: blur(5px) grayscale(1);
+}
+
+.transition(@duration) {
+    -webkit-transition: all @duration ease-in-out;
+    moz-transition: all @duration ease-in-out;
+    transition: all @duration ease-in-out;
 }
