@@ -16,9 +16,8 @@ router.get('/', function(req, res) {
 
     tableSvc.createTableIfNotExists(globalTable, function(error, result, response) {
         if(!error) {
-            var query = azure.TableQuery()
-            // .top(5);
-            //.where('PartitionKey eq ?', 'part2');
+            var query = new azure.TableQuery()
+            .where('PartitionKey eq ?', globalPartition);
 
             tableSvc.queryEntities(globalTable, query, null, function(error, result, response) {
                 if(!error) {
@@ -26,10 +25,13 @@ router.get('/', function(req, res) {
                         return {
                             score: entry.score._,
                             level: entry.level._,
-                            difficulty: entry.difficulty._
+                            difficulty: entry.difficulty._,
+                            name: entry.name ? entry.name._ : 'anonymous'
                         };
                     });
-                    res.json(data);
+                    res.json(data.sort(function(a, b) {
+                        return b.score-a.score;
+                    }));
                 } else {
                     res.status(500).send("Error querying records");
                 }
@@ -44,10 +46,11 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     var newRecord = {
         PartitionKey: entGen.String(globalPartition),
-        RowKey: entGen.String(req.body.deviceId),
+        RowKey: entGen.String(req.body.deviceId + '-' + req.body.difficulty),
         score: entGen.Int32(req.body.score),
         level: entGen.Int32(req.body.level),
-        difficulty: entGen.String(req.body.difficulty)
+        difficulty: entGen.String(req.body.difficulty),
+        name: entGen.String(req.body.name)
     };
 
     var retryOperations = new azure.ExponentialRetryPolicyFilter();
@@ -56,15 +59,15 @@ router.post('/', function(req, res) {
     tableSvc.createTableIfNotExists(globalTable, function(error, result, response) {
         if(!error) {
             // Try to retrieve the entitiy
-            tableSvc.retrieveEntity(globalTable, globalPartition, req.body.deviceId, function(error, result, response) {
+            tableSvc.retrieveEntity(globalTable, globalPartition, req.body.deviceId + '-' + req.body.difficulty, function(error, result, response) {
                 if(!error){
                     // result contains the entity
-                    if (result.entity) {
-                        if (newRecord.score > result.entity.score) {
+                    if (result) {
+                        if (req.body.score > result.score._) {
                             // new high score for this device id
                             tableSvc.updateEntity(globalTable, newRecord, function(error, result, response) {
                                 if (!error) {
-                                    res.status(200).send("New record updated");
+                                    res.status(200).send("New high score");
                                 } else {
                                     res.status(500).send("Error updating record");
                                 }
