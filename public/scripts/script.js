@@ -1,102 +1,68 @@
-function compare(a,b) {
-  return a.score - b.score;
+// Polling interval in seconds
+var POLL_INTERVAL = 2;
+
+function filterRecordsForDifficulty(str) {
+    return function(record) {
+        return record.difficulty === str;
+    };
 }
 
-var RecordTables = React.createClass({
-    getInitialState: function() {
-        return {data: []};
-    },
-    loadRecordsFromServer: function() {
-        $.ajax({
-            url: this.props.url,
-            dataType: 'json',
-            success: function(data) {
-                this.setState({data: data});
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-    },
-    componentDidMount: function() {
-        this.loadRecordsFromServer();
-        setInterval(this.loadRecordsFromServer, this.props.pollInterval);
-    },
+var RecordTable = React.createClass({
     render: function() {
-        var recordRowsEasy = [],
-            recordRowsMedium = [],
-            recordRowsHard = [],
-            stateData = this.state.data;
+        return (
+            <div className="column medium-4">
+                <h3>{this.props.label}</h3>
+                <table>
+                    <tr>
+                        <th>Score</th>
+                        <th>Level</th>
+                        <th>Name</th>
+                    </tr>
+                    {this.props.records.map(function(record) {
+                        return (
+                            <tr>
+                                <td>{record.score}</td>
+                                <td>{record.level}</td>
+                                <td>{record.name}</td>
+                            </tr>
+                        );
+                    })}
+                </table>
+            </div>
+        );
+    }
+});
 
-        for (var i = 0; i < stateData.length; i++) {
-            if (stateData[i].difficulty === "easy" && recordRowsEasy.length < this.props.maxRecords) {
-                recordRowsEasy.push(
-                    <tr>
-                        <td>{stateData[i].score}</td>
-                        <td>{stateData[i].level}</td>
-                        <td>{stateData[i].name}</td>
-                    </tr>
-                );
-            } else if (stateData[i].difficulty === "medium" && recordRowsMedium.length < this.props.maxRecords) {
-                recordRowsMedium.push(
-                    <tr>
-                        <td>{stateData[i].score}</td>
-                        <td>{stateData[i].level}</td>
-                        <td>{stateData[i].name}</td>
-                    </tr>
-                );
-            } else if (stateData[i].difficulty === "hard" && recordRowsHard.length < this.props.maxRecords) {
-                recordRowsHard.push(
-                    <tr>
-                        <td>{stateData[i].score}</td>
-                        <td>{stateData[i].level}</td>
-                        <td>{stateData[i].name}</td>
-                    </tr>
-                );
-            }
-        }
+var NameThisBetter = React.createClass({
+    render: function() {
+        var records = this.props.records,
+            easyRecords = records.filter(filterRecordsForDifficulty("easy"))
+                .splice(0, this.props.maxRecords),
+            mediumRecords = records.filter(filterRecordsForDifficulty("medium"))
+                .splice(0, this.props.maxRecords),
+            hardRecords = records.filter(filterRecordsForDifficulty("hard"))
+                .splice(0, this.props.maxRecords);
 
         return (
             <div>
-                <div className="column medium-4">
-                    <h3>Easy</h3>
-                    <table>
-                        <tr>
-                            <th>Score</th>
-                            <th>Level</th>
-                            <th>Name</th>
-                        </tr>
-                        {recordRowsEasy}
-                    </table>
-                </div>
-                <div className="column medium-4">
-                    <h3>Medium</h3>
-                    <table>
-                        <tr>
-                            <th>Score</th>
-                            <th>Level</th>
-                            <th>Name</th>
-                        </tr>
-                        {recordRowsMedium}
-                    </table>
-                </div>
-                <div className="column medium-4">
-                    <h3>Hard</h3>
-                    <table>
-                        <tr>
-                            <th>Score</th>
-                            <th>Level</th>
-                            <th>Name</th>
-                        </tr>
-                        {recordRowsHard}
-                    </table>
-                </div>
+                <RecordTable label="Easy" records={easyRecords} />
+                <RecordTable label="Medium" records={mediumRecords} />
+                <RecordTable label="Hard" records={hardRecords} />
             </div>
         );
   }
 });
 
-React.render(
-  <RecordTables url="/records/" pollInterval={2000} maxRecords={10}  />,
-  document.getElementById('highscore-tables')
-);
+
+setInterval(function() {
+    $.getJSON('/records/')
+        .done(function(data) {
+            React.render(
+              <NameThisBetter data={data} maxRecords={10}  />,
+              document.getElementById('highscore-tables')
+            );
+        })
+        .error(function(xhr, status, err) {
+            console.error(this.props.url, status, err.toString());
+        });
+}, POLL_INTERVAL * 1000);
