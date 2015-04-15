@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.render(
     'index',
     {
-        title: 'Mathdash',
+        title: 'MathDash',
         slick: {
             centerMode: true,
             centerPadding: '0px',

@@ -1,5 +1,15 @@
 @import "effects.d.less";
 
+@font-face {
+  font-family: 'SpaceRanger';
+  src: url('spaceranger-webfont.eot'); /* IE9 Compat Modes */
+  src: url('spaceranger-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('spaceranger-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('spaceranger-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/spaceranger-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('spaceranger-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 body {
     background-color: #000;
 
@@ -71,12 +81,12 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6, {
-    font-family: Verdana, Geneva, sans-serif !important;
+    font-family: 'SpaceRanger', Verdana, Geneva, sans-serif !important;
     color: @COLOR_FG_HEADINGS !important;
 }
 
 p,blockquote,cite {
-    font-family: Verdana, Geneva, sans-serif !important;
+    font-family: 'SpaceRanger', Verdana, Geneva, sans-serif !important;
     color: @COLOR_FG !important;
 }
 
