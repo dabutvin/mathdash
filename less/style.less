@@ -14,9 +14,9 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        opacity: .5;
+        opacity: .3;
         z-index: -1;
-        .slideforever();
+        //.slideforever();
     }
 
     .panel {
@@ -28,6 +28,7 @@ body {
             background-color: @COLOR_ROW_BG;
             padding: 20px;
             border-radius: 20px;
+            border: 2px solid #FF9900;
         }
 
         &.hero-panel {
@@ -69,7 +70,12 @@ body {
     }
 }
 
-h1,h2,h3,h4,h5,h6,p,blockquote,cite {
+h1,h2,h3,h4,h5,h6, {
+    font-family: Verdana, Geneva, sans-serif !important;
+    color: @COLOR_FG_HEADINGS !important;
+}
+
+p,blockquote,cite {
     font-family: Verdana, Geneva, sans-serif !important;
     color: @COLOR_FG !important;
 }
