@@ -84,9 +84,24 @@ p,blockquote,cite {
     margin-left: 30px;
 
     .blurfilter();
-    .transition(.7s);
 
     &.slick-center {
         .nofilter();
     }
+}
+
+.slick-prev, .slick-next {
+    width: auto;
+    height: auto;
+    &:before {
+        font-size: 66px;
+    }
+}
+
+.slick-next {
+    right: -70px;
+}
+
+.slick-prev {
+    left: -70px;
 }

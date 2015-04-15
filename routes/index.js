@@ -9,8 +9,9 @@ router.get('/', function(req, res) {
         title: 'Mathdash',
         slick: {
             centerMode: true,
-            centerPadding: '60px',
+            centerPadding: '0px',
             slidesToShow: 3,
+            swipeToSlide: true,
             responsive: [
             {
               breakpoint: 768,
@@ -18,7 +19,7 @@ router.get('/', function(req, res) {
                 arrows: false,
                 centerMode: true,
                 centerPadding: '40px',
-                slidesToShow: 3
+                slidesToShow: 2
               }
             },
             {
