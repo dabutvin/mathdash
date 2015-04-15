@@ -1,7 +1,3 @@
-function compare(a,b) {
-  return a.score - b.score;
-}
-
 var RecordTables = React.createClass({
     getInitialState: function() {
         return {data: []};

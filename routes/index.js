@@ -12,6 +12,7 @@ router.get('/', function(req, res) {
             centerPadding: '0px',
             slidesToShow: 3,
             swipeToSlide: true,
+            touchThreshold: 10,
             responsive: [
             {
               breakpoint: 768,
