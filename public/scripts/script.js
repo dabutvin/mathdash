@@ -93,6 +93,6 @@ var RecordTables = React.createClass({
 });
 
 React.render(
-  <RecordTables url="/records/" pollInterval={2000} maxRecords={10}  />,
+  <RecordTables url="/records/" pollInterval={200000000} maxRecords={10}  />,
   document.getElementById('highscore-tables')
 );
