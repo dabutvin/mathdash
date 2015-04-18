@@ -48,6 +48,8 @@ body {
 
 			a {
 				background-color: @COLOR_BUTTON_BG;
+				margin-top: 10px;
+				margin-bottom: 0;
 			}
         }
 
@@ -77,16 +79,35 @@ body {
         h3 {
             font-size: @SIZE_H3;
         }
+        h4 {
+            font-size: @SIZE_H4;
+        }
+        h5 {
+            font-size: @SIZE_H5;
+        }
+        h6 {
+            font-size: @SIZE_H6;
+        }
     }
 }
 
-h1,h2,h3,h4,h5,h6, {
-    font-family: 'SpaceRanger', Verdana, Geneva, sans-serif !important;
+
+h1,h2,h3,h4,h5,h6 {
     color: @COLOR_FG_HEADINGS !important;
 }
 
-p,blockquote,cite {
+h1,h2 {
     font-family: 'SpaceRanger', Verdana, Geneva, sans-serif !important;
+	margin-top: 0;
+}
+
+h3,h4,h5,h6, {
+    font-family: Verdana, Geneva, sans-serif !important;
+	margin-bottom: 10px !important;
+}
+
+p,blockquote,cite {
+    font-family: Verdana, Geneva, sans-serif !important;
     color: @COLOR_FG !important;
 }
 
