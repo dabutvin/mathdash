@@ -15,7 +15,16 @@ router.get('/', function(req, res) {
             touchThreshold: 10,
             responsive: [
             {
-              breakpoint: 768,
+              breakpoint: 1030,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
+              }
+            },
+			{
+              breakpoint: 786,
               settings: {
                 arrows: false,
                 centerMode: true,
