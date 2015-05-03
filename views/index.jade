@@ -2,15 +2,17 @@ extends layout
 
 block content
     div.magellan-container(data-magellan-expedition='fixed')
+        a(name='Top')
         div.row
             dl.sub-nav
                 dd
                     a(href='/')
                         img(alt='', src='/images/mathDash-title-01.png')
                 dd
-                    a(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Get the app
-                dd(data-magellan-arrival='screenshots')
-                    a(href='#screenshots') Screenshots
+                    a(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60')
+                        img(alt='', src='/images/154x40_WPS_Download_blk.png')
+                dd(data-magellan-arrival='images')
+                    a(href='#images') images
                 dd(data-magellan-arrival='about')
                     a(href='#about') About
                 dd(data-magellan-arrival='highscores')
@@ -19,13 +21,12 @@ block content
                     a(href='#about us') About Us
     div.panel.hero-panel
         div.row
-            h1 Math is fun again
-            a.button.round(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Download
-                br
-                img(alt='', src='/images/WindowsPhone_icon_badge_gry.png')
-    div.panel(data-magellan-destination='screenshots')
-        a(name='screenshots')
-        div.row.large-collapse
+            h2 Math is fun again
+            a.button.round(href='http://www.windowsphone.com/s?appid=2e7d009b-a5d2-4bb7-ae9c-f1e69c1dcc60') Get the app
+            br
+            br
+            h6 (Currently in private beta)
+            br
             div.columns.large-10.large-offset-1(data-slick='#{JSON.stringify(slick)}')
                 img(alt='', src='/images/screenshots/1.png')
                 img(alt='', src='/images/screenshots/2.png')
@@ -44,25 +45,29 @@ block content
                 img(alt='', src='/images/screenshots/16.png')
     div.panel(data-magellan-destination='about')
         a(name='about')
-        div.row
+        div.row.large-collapse
             div.column
-                h4 MathDash is a unique fast-paced arcade game that uses abstract thinking
+                h4
+                    br
+                    | MathDash is a unique fast-paced arcade game that uses abstract thinking
+                    br
+                    br
                 p Players of any age can enjoy MathDash, while elementary-age children can use it to reinforce basic math concepts.  MathDash is unlike most educational games because math is integrated into the core gameplay design.  Unlike traditional tests, you're given an operator and an answer and must solve for the operands.  Do this while chaining combos, activating power-ups, avoiding hazards and competing with your friends and your high score might end up here.
             div.columns.medium-6
-                blockquote The game was a hit in every class they showed it to and, being a mobile title, ...it will be an accessible learning tool for children around the world.
-                    cite
-                        | Polygon, 
-                        a(href='http://www.polygon.com/2013/7/8/4501894/how-the-us-won-the-imagine-cup-with-math') How the US won The Imagine Cup with math
+                blockquote The game was a hit in every class they showed it to and, being a mobile title... it will be an accessible learning tool for children around the world.
+                cite
+                    | Polygon, 
+                    a(href='http://www.polygon.com/2013/7/8/4501894/how-the-us-won-the-imagine-cup-with-math') How the US won The Imagine Cup with math
             div.columns.medium-6
                 blockquote The group, dubbed team "Drexel Dragons," won the game design mobile category with a smartphone app that turns learning math concepts into a fun game.
-                    cite
-                        | Drexel Now, 
-                        a(href='http://drexel.edu/now/archive/2012/July/Computer%20Science%20Design%20Team%20Wins%20Microsoft%20Imagine%20Cup%20World%20Championship/') Computer Science Design Team Wins Microsoft Imagine Cup World Championship
+                cite
+                    | Drexel Now, 
+                    a(href='http://drexel.edu/now/archive/2012/July/Computer%20Science%20Design%20Team%20Wins%20Microsoft%20Imagine%20Cup%20World%20Championship/') Computer Science Design Team Wins Microsoft Imagine Cup World Championship
     div.panel.highscore-panel(data-magellan-destination='highscores')
         a(name='highscores')
-        div.row
+        div.row.large-collapse
             h2 High scores
-        div.row#highscore-tables
+            div#highscore-tables
     div.panel(data-magellan-destination='about us')
         a(name='about us')
         div.row
@@ -74,8 +79,10 @@ block content
                     p We are a small start-up company that makes video games. We are 3 developers from Drexel University (Philadelphia, PA) who love to make video games. MathDash started as a college project, but quickly became so much more. After winning "Game Design for Phone" in the 2012 Imagine Cup on the national and international level, we took a short break before refining MathDash for release to the public.
                 div.columns.large-6
                     img(alt='', src='/images/UsFromImagineCup3.png')
-                    br
                     h6
+                        | Us at the 2012 Imagine Cup International Finals awards ceremony
+                        br
+                        br
                         | Left to right:
                         a(href='http://keith-ayers.com/') Keith Ayers
                         | , 
@@ -84,6 +91,13 @@ block content
                         a(href='https://www.linkedin.com/pub/matt-lesnak/27/68a/1a3') Matthew Lesnak
     div.panel.footer-panel
         div.row
-            div.column
+            div.columns.medium-3
+                a.button.round(href='#Top')
+                    h5 Back to Top
+            div.columns.medium-6
                 blockquote I do not fear computers. I fear the lack of them.
                     cite Isaac Asimov
+                h6 © 2014 - 2015 Midnight Games Studios, LLP. All rights Reserved.
+            div.columns.medium-3
+                a.button.round(href='/privacy')
+                    h5 Privacy Policy
