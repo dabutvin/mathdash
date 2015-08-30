@@ -3,8 +3,8 @@ var router = express.Router();
 var azure = require('azure-storage');
 var entGen = azure.TableUtilities.entityGenerator;
 
-var storageAccountName = "dansstore";
-var storageAccountKey = "P5+vMg9qq5ryq04d0OfOny2N///DXz9Mopmo52hlswCgZeeDSW1SNFSwX9AAYDCpzE6bEN9jjrBnRtuo2SD5fg==";
+var storageAccountName = "mathdashstorage";
+var storageAccountKey = "9blwuC7B08uVAkfCFRadLBBBaDiscZJzhYNdsJ4/gkKc2qLj+akVyoPmg3hz4+jvDOaMlWnMPXJVwirZe+sWQA==";
 
 var globalTable = 'records';
 var globalPartition = 'partition1';
