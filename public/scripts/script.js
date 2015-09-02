@@ -25,7 +25,7 @@ var RecordTables = React.createClass({
             stateData = this.state.data;
 
         for (var i = 0; i < stateData.length; i++) {
-            if (stateData[i].difficulty === "easy" && recordRowsEasy.length < this.props.maxRecords) {
+            if (stateData[i].difficulty.toLowerCase() === "easy" && recordRowsEasy.length < this.props.maxRecords) {
                 recordRowsEasy.push(
                     <tr>
                         <td>{stateData[i].score}</td>
@@ -33,7 +33,7 @@ var RecordTables = React.createClass({
                         <td>{stateData[i].name}</td>
                     </tr>
                 );
-            } else if (stateData[i].difficulty === "medium" && recordRowsMedium.length < this.props.maxRecords) {
+            } else if (stateData[i].difficulty.toLowerCase() === "medium" && recordRowsMedium.length < this.props.maxRecords) {
                 recordRowsMedium.push(
                     <tr>
                         <td>{stateData[i].score}</td>
@@ -41,7 +41,7 @@ var RecordTables = React.createClass({
                         <td>{stateData[i].name}</td>
                     </tr>
                 );
-            } else if (stateData[i].difficulty === "hard" && recordRowsHard.length < this.props.maxRecords) {
+            } else if (stateData[i].difficulty.toLowerCase() === "hard" && recordRowsHard.length < this.props.maxRecords) {
                 recordRowsHard.push(
                     <tr>
                         <td>{stateData[i].score}</td>
@@ -93,6 +93,6 @@ var RecordTables = React.createClass({
 });
 
 React.render(
-  <RecordTables url="/records/" pollInterval={200000000} maxRecords={10}  />,
+  <RecordTables url="/records/" pollInterval={2000000} maxRecords={10}  />,
   document.getElementById('highscore-tables')
 );
