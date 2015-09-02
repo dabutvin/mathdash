@@ -21,7 +21,10 @@ router.get('/', function(req, res) {
 
             tableSvc.queryEntities(globalTable, query, null, function(error, result, response) {
                 if(!error) {
-                    var data = result.entries.map(function(entry) {
+                    var filteredResults = result.entries.filter(function(entry) {
+                        return entry.score && entry.level && entry.difficulty;
+                    });
+                    var data = filteredResults.map(function(entry) {
                         return {
                             score: entry.score._,
                             level: entry.level._,
