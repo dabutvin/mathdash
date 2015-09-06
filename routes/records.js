@@ -66,34 +66,34 @@ router.post('/', function(req, res) {
                 if(!error){
                     // result contains the entity
                     if (result) {
-                        if (req.body.score > result.score._) {
+                        if (req.body.score >= result.score._) {
                             // new high score for this device id
                             tableSvc.updateEntity(globalTable, newRecord, function(error, result, response) {
                                 if (!error) {
-                                    res.status(200).send("New high score");
+                                    res.status(200).send("200: New high score");
                                 } else {
-                                    res.status(500).send("Error updating record");
+                                    res.status(500).send("500: Error updating record");
                                 }
                             });
                         } else {
-                            res.status(204).send("Higher score already achieved");
+                            res.status(204).send("204: Higher score already achieved");
                         }
                     } else {
                         // first record in the table
                         tableSvc.insertEntity(globalTable, newRecord, function(error, result, response) {
                             if (!error) {
-                                res.status(201).send("First record inserted");
+                                res.status(201).send("201: First record inserted");
                             } else {
-                                res.status(500).send("Error inserting first record");
+                                res.status(500).send("500: Error inserting first record");
                             }
                         });
                     }
                 } else {
                     tableSvc.insertEntity(globalTable, newRecord, function(error, result, response) {
                         if (!error) {
-                            res.status(201).send("First record inserted");
+                            res.status(201).send("201: First record inserted");
                         } else {
-                            res.status(500).send("Error inserting first record");
+                            res.status(500).send("500: Error inserting first record");
                         }
                     });
                 }

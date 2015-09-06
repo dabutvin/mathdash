@@ -33,7 +33,7 @@ var RecordTables = React.createClass({
                         <td>{stateData[i].name}</td>
                     </tr>
                 );
-            } else if (stateData[i].difficulty.toLowerCase() === "medium" && recordRowsMedium.length < this.props.maxRecords) {
+            } else if (stateData[i].difficulty.toLowerCase() === "normal" && recordRowsMedium.length < this.props.maxRecords) {
                 recordRowsMedium.push(
                     <tr>
                         <td>{stateData[i].score}</td>
@@ -41,7 +41,7 @@ var RecordTables = React.createClass({
                         <td>{stateData[i].name}</td>
                     </tr>
                 );
-            } else if (stateData[i].difficulty.toLowerCase() === "hard" && recordRowsHard.length < this.props.maxRecords) {
+            } else if (stateData[i].difficulty.toLowerCase() === "brutal" && recordRowsHard.length < this.props.maxRecords) {
                 recordRowsHard.push(
                     <tr>
                         <td>{stateData[i].score}</td>
@@ -66,7 +66,7 @@ var RecordTables = React.createClass({
                     </table>
                 </div>
                 <div className="column medium-4">
-                    <h3>Medium</h3>
+                    <h3>Normal</h3>
                     <table>
                         <tr>
                             <th>Score</th>
@@ -77,7 +77,7 @@ var RecordTables = React.createClass({
                     </table>
                 </div>
                 <div className="column medium-4">
-                    <h3>Hard</h3>
+                    <h3>Brutal</h3>
                     <table>
                         <tr>
                             <th>Score</th>
